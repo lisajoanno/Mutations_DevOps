@@ -1,13 +1,3 @@
-<html>
-<head>
-<style type="text/css">
-body {
-  background-color : blue;
-}
-</style>
-</head>
-<body>
-
 <h1>Tests par mutation</h1>
 
 <h2>Description du framework :</h2>
@@ -117,6 +107,3 @@ A l'intérieur d'une condition
 
 </li>
 </ul>
-
-</body>
-</html>
