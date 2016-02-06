@@ -23,6 +23,7 @@ On génère ensuite des programmes mutants à l'aide de <i>spoon</i> en couplant
 </p>
 
 <h2>Liste des mutations à appliquer</h2>
+
 <ul>
 <li>
 Enlever ou rajouter les mots clés "static" et "final" "@Override"
@@ -124,3 +125,9 @@ A l'intérieur d'un bloc
 Une ligne particulière
 </li>
 </ul>
+
+<h2>Comment appliquer les mutations</p>
+
+<p>
+Toutes les mutations ne peuvent pas s'appliquer à tous les sélecteurs, par exemple, la mutation "Enlever "@Override"" ne peut que s'appliquer qu'à une classe. "Placer des break ou return" ne peut pas s'appliquer hors d'une méthode.
+</p>
