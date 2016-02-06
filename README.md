@@ -2,9 +2,9 @@
 
 ## Présentation de l’équipe
 
-Arnaud GARNIER
-Lisa JOANNO
-Thibaut SORIANO
+* Arnaud GARNIER
+* Lisa JOANNO
+* Thibaut SORIANO
 
 ## Présentation du projet
 
