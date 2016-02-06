@@ -4,5 +4,13 @@ L’entrée de notre framework est constituée d’un programme java et de ses t
 
 <h2>Liste des mutations à appliquer</h2>
 <ul>
-<li>Enlever ou rajouter les mots clés "static" et "final"</li>
+<li>
+Enlever ou rajouter les mots clés "static" et "final"
+</li>
+<li>
+</li>
+<li>
+</li>
+<li>
+</li>
 </ul>
