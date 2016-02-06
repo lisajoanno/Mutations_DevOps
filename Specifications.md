@@ -77,8 +77,13 @@ Changer la valeur d'une constante
 <h2>Liste des sélecteurs</h2>
 <ul>
 <li>
+Entête / corps d'une classe, méthode
 </li>
 <li>
+A l'intérieur d'une condition
+</li>
+<li>
+
 </li>
 </ul>
 </ul>
