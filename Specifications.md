@@ -6,12 +6,17 @@ L’entrée de notre framework est constituée d’un programme java et de ses t
 
 <h2>Chaîne de build</h2>
 
-<img src="img/chaine_build.png" alt="Chaîne de build">
-
 <p>
 D'abord, on compile le programme source pour obtenir des fichiers binaires. On applique n mutations pour obtenir n programmes mutants. On applique la suite de test à tous ces mutants, et on compare la sortie de ces tests avec la sortie des tests appliqués au programme original. 
 On considère qu'un mutant est tué si la sortie des tests appliqués au programme mutant est différente que la sortie des tests appliqués au programme original.
 On mesure ensuite le quotient entre les mutants tués et les mutants créés. Plus ce quotient est proche de 1, plus les tests sont fiables.
+</p>
+
+<img src="img/chaine_build.png" alt="Chaîne de build">
+
+<p>
+On est en Java donc on utilise <i>javac</i> pour compiler les fichiers sources.
+On génère ensuite des programmes mutants à l'aide de <i>spoon</i> en couplant des mutations et des sélecteurs <i>(cf. plus bas)</i>. On utilise <i>JUnit</i> pour tester l'ensemble des programmes (original et mutants), on obtient des <i>.xml</i> de résultats des tests. On extrait les données de ces résultats, puis on les met en forme à l'aide de <i>Bootstrap</i> et on génère une page <i>html</i> pour les afficher.
 </p>
 
 <h2>Liste des mutations à appliquer</h2>
