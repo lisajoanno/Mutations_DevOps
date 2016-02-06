@@ -19,8 +19,8 @@ On mesure ensuite le quotient entre les mutants tués et les mutants créés. Pl
 
 <p>
 On est en Java donc on utilise <i>javac</i> pour compiler les fichiers sources.
-On génère ensuite des programmes mutants à l'aide de <i>spoon</i> en couplant des mutations et des sélecteurs <i>(cf. plus bas)</i>. On utilise <i>JUnit</i> pour tester l'ensemble des programmes (original et mutants), on obtient des <i>.xml</i> de résultats des tests. On extrait les données de ces résultats, puis on les met en forme à l'aide de <i>Bootstrap</i> et on génère une page <i>html</i> pour les afficher.
-On utilise <i>Maven</i> pour automatiser la chaine de build.
+On génère ensuite des programmes mutants à l'aide de <i>spoon</i> en couplant des mutations et des sélecteurs <i>(cf. plus bas)</i>. <br/>On utilise <i>JUnit</i> pour tester l'ensemble des programmes (original et mutants), on obtient des <i>.xml</i> de résultats des tests. <br/>On extrait les données de ces résultats, puis on les met en forme à l'aide de <i>Bootstrap</i> et on génère une page <i>html</i> pour les afficher.<br/>
+On utilise <i>Maven</i> pour automatiser la chaîne de build.
 </p>
 
 <h2>Liste des mutations à appliquer</h2>
