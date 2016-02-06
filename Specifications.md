@@ -23,6 +23,25 @@ Remplacer une incrémentation par une décrémentation
 Enlever les cast
 </li>
 <li>
+Remplacer les boucles "while" par "do while"
+</li>
+<li>
+Inverser les booléens
+</li>
+<li>
+Enlever le "this." avant l'utilisation d'une méthode ou d'un attribut
+</li>
+<li>
+Enlever les "try - catch" pour ne laisser que le contenu du "try"
+</li>
+<li>
+Supprimer les déclarations de variables
+</li>
+<li>
+</li>
+<li>
+</li>
+<li>
 </li>
 <li>
 </li>
