@@ -126,7 +126,7 @@ Une ligne particulière
 </li>
 </ul>
 
-<h2>Comment appliquer les mutations</p>
+<h2>Comment appliquer les mutations</h2>
 
 <p>
 Toutes les mutations ne peuvent pas s'appliquer à tous les sélecteurs, par exemple, la mutation "Enlever "@Override"" ne peut que s'appliquer qu'à une classe. "Placer des break ou return" ne peut pas s'appliquer hors d'une méthode.
