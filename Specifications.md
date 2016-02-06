@@ -101,16 +101,14 @@ Changer la valeur d'une constante
  <li>Programme entier</li>
  <li>Package</li>
  <li>
-  <ul>
-   Classe :
+  <ul>Classe :
    <li>Entête</li>
    <li>Corps</li>
   </ul>
  </li>
  
  <li>
-  <ul>
-   Méthode :
+  <ul>Méthode :
    <li>Entête</li>
    <li>Corps</li>
   </ul>
