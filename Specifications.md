@@ -8,6 +8,19 @@ L’entrée de notre framework est constituée d’un programme java et de ses t
 Enlever ou rajouter les mots clés "static" et "final"
 </li>
 <li>
+Externaliser les classes internes
+</li>
+<li>
+Changer les opérateurs de comparaisons : <, >, <=, >=, ==, !=
+</li>
+<li>
+Permuter 2 lignes de code
+</li>
+<li>
+Remplacer une incrémentation par une décrémentation
+</li>
+<li>
+Enlever les cast
 </li>
 <li>
 </li>
