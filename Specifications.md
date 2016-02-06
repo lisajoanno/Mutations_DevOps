@@ -5,7 +5,10 @@ L’entrée de notre framework est constituée d’un programme java et de ses t
 <h2>Liste des mutations à appliquer</h2>
 <ul>
 <li>
-Enlever ou rajouter les mots clés "static" et "final"
+Enlever ou rajouter les mots clés "static" et "final" "@Override"
+</li>
+<li>
+Enlever une méthode qui est "@Override"
 </li>
 <li>
 Externaliser les classes internes
@@ -35,14 +38,47 @@ Enlever le "this." avant l'utilisation d'une méthode ou d'un attribut
 Enlever les "try - catch" pour ne laisser que le contenu du "try"
 </li>
 <li>
-Supprimer les déclarations de variables
+Supprimer ou altérer les déclarations de variables
 </li>
+<li>
+Changer l'accessibilité des classes, méthodes, variables
+</li>
+<li>
+Changer les opérateurs : +, *, -, /
+</li>
+<li>
+Incrémenter ou décrémenter un entier
+</li>
+<li>
+Remplacer les opérateurs logiques dans les conditions : &&, ||
+</li>
+<li>
+Placer des "break" ou "return" au milieu du code
+</li>
+<li>
+Dans une structure "if - else" et "switch - case", changer l'ordre des conditions
+</li>
+<li>
+Enlever les "extend" "implements" et "import"
+</li>
+<li>
+Faire correspondre les typages dynamique et statique
+</li>
+<li>
+Enlever les constructeurs
+</li>
+<li>
+Changer l'ordre des arguments dans l'appel / déclaration / implémentation des méthodes
+</li>
+<li>
+Changer la valeur d'une constante
+</li>
+
+<h2>Liste des sélecteurs</h2>
+<ul>
 <li>
 </li>
 <li>
 </li>
-<li>
-</li>
-<li>
-</li>
+</ul>
 </ul>
