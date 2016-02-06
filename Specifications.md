@@ -1,8 +1,12 @@
+<html>
+<head>
 <style>
 figcaption {
   background-color : blue;
 }
 </style>
+</head>
+<body>
 
 <h1>Tests par mutation</h1>
 
@@ -113,3 +117,6 @@ A l'intérieur d'une condition
 
 </li>
 </ul>
+
+</body>
+</html>
