@@ -14,7 +14,7 @@ On mesure ensuite le quotient entre les mutants tués et les mutants créés. Pl
 
 <figure>
 <img src="img/chaine_build.png" alt="Chaîne de build"><br />
-<figcaption>Figure 1 : <u>Chaîne de build</u></figcaption>
+<figcaption>Figure 1 : <i>Chaîne de build</i></figcaption>
 </figure><br /><br />
 
 <p>
