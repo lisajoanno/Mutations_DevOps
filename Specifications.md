@@ -15,7 +15,7 @@ On mesure ensuite le quotient entre les mutants tués et les mutants créés. Pl
 <figure>
 <img src="img/chaine_build.png" alt="Chaîne de build"><br />
 <figcaption>Figure 1 : <u>Chaîne de build</u></figcaption>
-</figure>
+</figure><br /><br />
 
 <p>
 On est en Java donc on utilise <i>javac</i> pour compiler les fichiers sources.
