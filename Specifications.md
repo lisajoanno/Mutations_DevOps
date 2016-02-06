@@ -14,7 +14,7 @@ On mesure ensuite le quotient entre les mutants tués et les mutants créés. Pl
 
 <figure>
 <img src="img/chaine_build.png" alt="Chaîne de build"><br />
-<figcaption>Proposition pour le thème : <br><em>Un goût de fraise</em> du jeu </figcaption>
+<figcaption>Figure 1 : <br><u>Chaîne de build</u></figcaption>
 </figure>
 
 <p>
