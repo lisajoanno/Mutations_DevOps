@@ -6,6 +6,8 @@ L’entrée de notre framework est constituée d’un programme java et de ses t
 
 <h2>Chaîne de build</h2>
 
+<img href="img/chaine_build.png" />
+
 <p>
 D'abord, on compile le programme source pour obtenir des fichiers binaires. On applique n mutations pour obtenir n programmes mutants. On applique la suite de test à tous ces mutants, et on compare la sortie de ces tests avec la sortie des tests appliqués au programme original. 
 On considère qu'un mutant est tué si la sortie des tests appliqués au programme mutant est différente que la sortie des tests appliqués au programme original.
