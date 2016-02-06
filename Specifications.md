@@ -1,7 +1,7 @@
 <html>
 <head>
 <style type="text/css">
-figcaption {
+body {
   background-color : blue;
 }
 </style>
