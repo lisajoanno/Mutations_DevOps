@@ -73,6 +73,7 @@ Changer l'ordre des arguments dans l'appel / déclaration / implémentation des 
 <li>
 Changer la valeur d'une constante
 </li>
+</ul>
 
 <h2>Liste des sélecteurs</h2>
 <ul>
@@ -85,5 +86,4 @@ A l'intérieur d'une condition
 <li>
 
 </li>
-</ul>
 </ul>
