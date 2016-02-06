@@ -98,7 +98,14 @@ Changer la valeur d'une constante
 <h2>Liste des sélecteurs</h2>
 <ul>
 <li>
-Entête / corps d'une classe, méthode
+Classe:
+<li>Entête</li>
+<li>Corps</li>
+</li>
+<li>
+Méthode:
+<li>Entête</li>
+<li>Corps</li>
 </li>
 <li>
 A l'intérieur d'une condition
