@@ -98,9 +98,11 @@ Changer la valeur d'une constante
 <h2>Liste des sélecteurs</h2>
 <ul>
 
+ <li>Programme entier</li>
+ <li>Package</li>
  <li>
   <ul>
-   Classe:
+   Classe :
    <li>Entête</li>
    <li>Corps</li>
   </ul>
@@ -108,7 +110,7 @@ Changer la valeur d'une constante
  
  <li>
   <ul>
-   Classe:
+   Méthode :
    <li>Entête</li>
    <li>Corps</li>
   </ul>
@@ -118,6 +120,9 @@ Changer la valeur d'une constante
 A l'intérieur d'une condition
 </li>
 <li>
-
+A l'intérieur d'un bloc
+</li>
+<li>
+Une ligne particulière
 </li>
 </ul>
