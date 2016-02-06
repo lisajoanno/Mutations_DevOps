@@ -97,20 +97,23 @@ Changer la valeur d'une constante
 
 <h2>Liste des sélecteurs</h2>
 <ul>
-<li>
-<ul>
-Classe:
-<li>Entête</li>
-<li>Corps</li>
-</ul>
-<ul>
-</li>
-<li>
-Méthode:
-<li>Entête</li>
-<li>Corps</li>
-</ul>
-</li>
+
+ <li>
+  <ul>
+   Classe:
+   <li>Entête</li>
+   <li>Corps</li>
+  </ul>
+ </li>
+ 
+ <li>
+  <ul>
+   Classe:
+   <li>Entête</li>
+   <li>Corps</li>
+  </ul>
+ </li>
+
 <li>
 A l'intérieur d'une condition
 </li>
