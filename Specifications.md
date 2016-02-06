@@ -128,6 +128,9 @@ Une ligne particulière
 
 <h2>Comment appliquer les mutations</h2>
 
+<p> 
+On crée un programme mutant en associant une mutation à un sélecteur. On l'applique partout où cela est possible (dans la mesure du sélecteur) en parcourant le bout de code.
+</p>
 <p>
-Toutes les mutations ne peuvent pas s'appliquer à tous les sélecteurs, par exemple, la mutation "Enlever "@Override"" ne peut que s'appliquer qu'à une classe. "Placer des break ou return" ne peut pas s'appliquer hors d'une méthode.
+Toutes les mutations ne peuvent pas s'appliquer à tous les sélecteurs, par exemple, la mutation "Enlever "@Override"" ne peut que s'appliquer à une classe. "Placer des break ou return" ne peut pas s'appliquer hors d'une méthode. "Enlever les imports" ne s'applique qu'à une classe.
 </p>
