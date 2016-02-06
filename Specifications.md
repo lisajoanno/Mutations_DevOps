@@ -1,6 +1,10 @@
-<h1>Description du framework :</h1>
+<h1>Tests par mutation</h1>
+
+<h2>Description du framework :</h2>
 
 L’entrée de notre framework est constituée d’un programme java et de ses tests. Notre framework vérifiera la pertinence et l’efficacité de ces tests en introduisant des mutations dans le code testé, et en lançant les tests. En effet, tester un code java permet de détecter des bugs spécifiques prévus à l’avance, mais tester les tests permet d’éviter la plupart des bugs potentiels, même les plus imprévisibles. Pour cela, on crée des mutations, on les applique sur le code source, en fonction des sélecteurs choisis.
+
+<h2>Chaîne de build</h2>
 
 <p>
 D'abord, on compile le programme source pour obtenir des fichiers binaires. On applique n mutations pour obtenir n programmes mutants. On applique la suite de test à tous ces mutants, et on compare la sortie de ces tests avec la sortie des tests appliqués au programme original. 
