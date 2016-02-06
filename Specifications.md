@@ -1,3 +1,9 @@
+<style>
+figcaption {
+  background-color : blue;
+}
+</style>
+
 <h1>Tests par mutation</h1>
 
 <h2>Description du framework :</h2>
@@ -14,7 +20,7 @@ On mesure ensuite le quotient entre les mutants tués et les mutants créés. Pl
 
 <figure>
 <img src="img/chaine_build.png" alt="Chaîne de build"><br />
-<figcaption>Figure 1 : <br><u>Chaîne de build</u></figcaption>
+<figcaption>Figure 1 : <u>Chaîne de build</u></figcaption>
 </figure>
 
 <p>
