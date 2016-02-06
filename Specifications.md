@@ -12,7 +12,10 @@ On considère qu'un mutant est tué si la sortie des tests appliqués au program
 On mesure ensuite le quotient entre les mutants tués et les mutants créés. Plus ce quotient est proche de 1, plus les tests sont fiables.
 </p>
 
+<figure>
 <img src="img/chaine_build.png" alt="Chaîne de build">
+<figcaption>Chaîne de build.</figcaption>
+</figure>
 
 <p>
 On est en Java donc on utilise <i>javac</i> pour compiler les fichiers sources.
