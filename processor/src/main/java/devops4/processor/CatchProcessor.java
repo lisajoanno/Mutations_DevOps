@@ -3,6 +3,8 @@ package devops4.processor;
 import org.apache.log4j.Level;
 import spoon.processing.AbstractProcessor;
 import spoon.reflect.code.CtCatch;
+import spoon.reflect.declaration.CtClass;
+
 
 /**
  * Reports warnings when empty catch blocks are found.

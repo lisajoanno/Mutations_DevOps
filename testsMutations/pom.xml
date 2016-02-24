@@ -5,7 +5,6 @@
   <groupId>devops4</groupId>
   <artifactId>testsMutations</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
 
   <name>testsMutations</name>
   <url>http://maven.apache.org</url>
@@ -13,7 +12,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-
+  
   <dependencies>
 
     <!-- JUnit dependency -->
@@ -30,16 +29,24 @@
         <version>5.0.2</version>
       </dependency>
 
+      <dependency>
+      	<groupId>devops4</groupId>
+      	<artifactId>processor</artifactId>
+      	<version>0.0.1-SNAPSHOT</version>
+      	<scope>system</scope>
+      	<systemPath>C:\Users\Arnaud\Documents\SI4-Archives\S2\DevOps\Mutations_DevOps\processor\target\processor-0.0.1-SNAPSHOT.jar</systemPath>
+      </dependency>
   </dependencies>
 
   <build>
 
+	<testSourceDirectory>src/test/java</testSourceDirectory>
+	<testOutputDirectory>target/result-test-mut</testOutputDirectory>
     <plugins>
-
     <plugin>
       <groupId>fr.inria.gforge.spoon</groupId>
       <artifactId>spoon-maven-plugin</artifactId>
-      <version>2.1</version>
+      <version>2.2</version>
       <executions>
         <execution>
         <phase>generate-sources</phase>
@@ -50,8 +57,11 @@
     </executions>
 
     <configuration>
+    <additionalClasspathElements>
+    	<additionalClasspathElement>../processor/target</additionalClasspathElement>
+	</additionalClasspathElements>
       <processors>
-        <processor>processor.CatchProcessor</processor>
+        <processor>devops4.processor.CatchProcessor</processor>
       </processors>
     </configuration>
     </plugin>
