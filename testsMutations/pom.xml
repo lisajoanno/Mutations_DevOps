@@ -41,12 +41,12 @@
       <artifactId>spoon-maven-plugin</artifactId>
       <version>2.1</version>
       <executions>
-        <!--<execution>
+        <execution>
         <phase>generate-sources</phase>
         <goals>
           <goal>generate</goal>
         </goals>
-      </execution>-->
+      </execution>
     </executions>
 
     <configuration>
