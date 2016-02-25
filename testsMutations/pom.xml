@@ -29,6 +29,7 @@
         <version>5.0.2</version>
       </dependency>
 
+	<!-- processor dependency -->
       <dependency>
       	<groupId>devops4</groupId>
       	<artifactId>processor</artifactId>
@@ -57,12 +58,17 @@
     </executions>
 
     <configuration>
+    <outFolder>src/target/java</outFolder>
     <additionalClasspathElements>
     	<additionalClasspathElement>../processor/target</additionalClasspathElement>
 	</additionalClasspathElements>
+	
+	<!-- Adding processors -->
       <processors>
         <processor>devops4.processor.CatchProcessor</processor>
+        <processor>devops4.processor.ClassProcessor</processor>
       </processors>
+      
     </configuration>
     </plugin>
 
