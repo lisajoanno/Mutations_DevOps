@@ -9,6 +9,7 @@
   <name>testsMutations</name>
   <url>http://maven.apache.org</url>
 
+<!-- Project encoding -->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -35,16 +36,19 @@
       	<artifactId>processor</artifactId>
       	<version>0.0.1-SNAPSHOT</version>
       	<scope>system</scope>
+      	<!-- WARNING : change the path to the destination of your processor-0.0.1-SNAPSHOT.jar file -->
+      	<!-- Suggestion : change that ugly stuff to an environment variable -->
       	<systemPath>C:\Users\Arnaud\Documents\SI4-Archives\S2\DevOps\Mutations_DevOps\processor\target\processor-0.0.1-SNAPSHOT.jar</systemPath>
       </dependency>
   </dependencies>
 
   <build>
-
+	<!-- Paths to the test source directory and to save test's results -->
 	<testSourceDirectory>src/test/java</testSourceDirectory>
 	<testOutputDirectory>target/result-test-mut</testOutputDirectory>
     <plugins>
     <plugin>
+    <!-- Applying spoon processors to our src/main source file -->
       <groupId>fr.inria.gforge.spoon</groupId>
       <artifactId>spoon-maven-plugin</artifactId>
       <version>2.2</version>
@@ -58,6 +62,7 @@
     </executions>
 
     <configuration>
+    <!-- Output folder, where we store mutants -->
     <outFolder>src/target/java</outFolder>
     <additionalClasspathElements>
     	<additionalClasspathElement>../processor/target</additionalClasspathElement>

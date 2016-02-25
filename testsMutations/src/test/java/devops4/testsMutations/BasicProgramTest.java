@@ -7,12 +7,12 @@ import org.junit.Test;
 /* Ajouter la librairie junit4 au buildpath pour que ça marche */
 
 public class BasicProgramTest {
-	
-	private BasicProgram bp = new BasicProgram();
+
+	private MutBasicProgram bp = new MutBasicProgram();
 
 	@Test
 	public void testDoNothingMethod() {
 		assertTrue(bp.doNothing());
 	}
-	
+
 }
