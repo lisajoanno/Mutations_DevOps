@@ -16,8 +16,6 @@ import spoon.reflect.reference.CtTypeReference;
 
 public class ClassProcessor extends AbstractProcessor<CtClass<?>> {
 	public void process(CtClass<?> ctClass) {
-		// Renaming the mutant-class to avoid conflicts between classes
-		ctClass.setSimpleName("Mut"+ctClass.getSimpleName());
 		// Creates field.
 		final CtTypeReference<Date> dateRef = getFactory().Code().createCtTypeReference(Date.class);
 		final CtTypeReference<List<Date>> listRef = getFactory().Code().createCtTypeReference(List.class);

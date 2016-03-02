@@ -31,21 +31,14 @@
       </dependency>
 
 	<!-- processor dependency -->
-      <dependency>
-      	<groupId>devops4</groupId>
-      	<artifactId>processor</artifactId>
-      	<version>0.0.1-SNAPSHOT</version>
-      	<scope>system</scope>
-      	<!-- WARNING : change the path to the destination of your processor-0.0.1-SNAPSHOT.jar file -->
-      	<!-- Suggestion : change that ugly stuff to an environment variable -->
-      	<systemPath>C:\Users\Arnaud\Documents\SI4-Archives\S2\DevOps\Mutations_DevOps\processor\target\processor-0.0.1-SNAPSHOT.jar</systemPath>
-      </dependency>
+	<dependency>
+		<groupId>devops4</groupId>
+		<artifactId>processor</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
   </dependencies>
 
   <build>
-	<!-- Paths to the test source directory and to save test's results -->
-	<testSourceDirectory>src/test/java</testSourceDirectory>
-	<testOutputDirectory>target/result-test-mut</testOutputDirectory>
     <plugins>
     <plugin>
     <!-- Applying spoon processors to our src/main source file -->
@@ -63,15 +56,11 @@
 
     <configuration>
     <!-- Output folder, where we store mutants -->
-    <outFolder>src/target/java</outFolder>
-    <additionalClasspathElements>
-    	<additionalClasspathElement>../processor/target</additionalClasspathElement>
-	</additionalClasspathElements>
+    <outFolder>src/main/java</outFolder>
 	
 	<!-- Adding processors -->
       <processors>
-        <processor>devops4.processor.CatchProcessor</processor>
-        <processor>devops4.processor.ClassProcessor</processor>
+      <processor>devops4.processor.ClassProcessor</processor>
       </processors>
       
     </configuration>

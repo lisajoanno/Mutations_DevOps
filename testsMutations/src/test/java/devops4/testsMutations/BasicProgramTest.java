@@ -8,7 +8,7 @@ import org.junit.Test;
 
 public class BasicProgramTest {
 
-	private MutBasicProgram bp = new MutBasicProgram();
+	private BasicProgram bp = new BasicProgram();
 
 	@Test
 	public void testDoNothingMethod() {
