@@ -17,11 +17,17 @@ REPO_RAPPORTS=$REPO/rapports
 OPT_MVN='-q'
 
 
+
+
+
+# On commence par tout nettoyer !
+./clean.sh
 echo "Début de la chaîne de build..." 
+
+
 
 echo '\n   PACKAGE DE PROCESSOR' 
 cd processor/ 
-mvn $OPT_MVN clean 
 # Compilation de processor 
 mvn $OPT_MVN package 
 
@@ -32,7 +38,6 @@ mkdir -p ../programme_original/ # -p : pas de warning si le fichier existe déj�
 cp -R src/main/java/devops4/testsMutations/* ../programme_original/
 
 echo '\n   TEST DU PROGRAMME ORIGINAL'
-mvn $OPT_MVN clean
 # Exécution des test sur le projet original maven
 mvn $OPT_MVN test
 # Le code source ici est celui des mutants
