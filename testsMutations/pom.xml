@@ -35,7 +35,7 @@
       	<artifactId>processor</artifactId>
       	<version>0.0.1-SNAPSHOT</version>
       	<scope>system</scope>
-      	<systemPath>C:\Users\Arnaud\Documents\SI4-Archives\S2\DevOps\Mutations_DevOps\processor\target\processor-0.0.1-SNAPSHOT.jar</systemPath>
+      	<systemPath>${basedir}/../processor/target/processor-0.0.1-SNAPSHOT.jar</systemPath>
       </dependency>
   </dependencies>
 
@@ -65,8 +65,7 @@
 	
 	<!-- Adding processors -->
       <processors>
-        <processor>devops4.processor.CatchProcessor</processor>
-        <processor>devops4.processor.ClassProcessor</processor>
+		<processor>devops4.processor.CatchProcessor</processor>
       </processors>
       
     </configuration>

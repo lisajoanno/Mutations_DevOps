@@ -13,14 +13,13 @@ REPO_RAPPORTS_GENERES=$REPO/testsMutations/target/surefire-reports
 # Dossier où sont placés les raports des tests
 REPO_RAPPORTS=$REPO/rapports
 
-
-
+# Options à donner à Maven. -q : quiet (que les erreurs et les tests)
 OPT_MVN='-q'
 
 
 echo "Début de la chaîne de build..." 
 
-echo '\n\n\n PACKAGE DE PROCESSOR' 
+echo '\n   PACKAGE DE PROCESSOR' 
 cd processor/ 
 mvn $OPT_MVN clean 
 # Compilation de processor 
@@ -32,7 +31,7 @@ cd ../testsMutations
 mkdir -p ../programme_original/ # -p : pas de warning si le fichier existe déjà
 cp -R src/main/java/devops4/testsMutations/* ../programme_original/
 
-echo '\n\n\n TEST DU PROGRAMME ORIGINAL'
+echo '\n   TEST DU PROGRAMME ORIGINAL'
 mvn $OPT_MVN clean
 # Exécution des test sur le projet original maven
 mvn $OPT_MVN test
@@ -48,16 +47,16 @@ mvn $OPT_MVN test
 
 # stocker les xml et blabla
 
-echo '\n\n\n TESTS SUR LES MUTANTS'
+echo '\n   TESTS SUR LES MUTANTS'
 cd $REPO
-rm -R rapports
+rm -rf rapports
 mkdir -p rapports
 
 find $REPO_MUTATIONS -type f | while read processeur
 do
     # Retrouver le nom simple du processeur
     PROCESSEUR=$(basename $processeur '.java')
-    echo "\n\nProcesseur courant : $PROCESSEUR"
+    echo "\n\n           Processeur courant : $PROCESSEUR \n"
     
     # Remplacement dans le pom.xml par le bon processeur, dans la balise <processors>
     SED="s/<processor>.*/\<processor\>devops4.processor.$PROCESSEUR\<\/processor\>/"
@@ -65,23 +64,18 @@ do
     
     # Lancement de mvn tests, génération des rapports
     cd $REPO/testsMutations
-    mvn test
+    mvn $OPT_MVN test
     
     # Récupération du rapport en .xml
     FICHIER_TEST=''
     find $REPO_RAPPORTS_GENERES -type f | while read fichier
     do 
-        echo $fichier
-        FICHIER_TEST=$(basename $fichier)
-        echo $FICHIER_TEST
-        
+        FICHIER_TEST=$(basename $fichier)        
         if [ $(grep -cx *.xml $REPO_RAPPORTS_GENERES/$FICHIER_TEST) -eq 0 ]; then
             mv $REPO_RAPPORTS_GENERES/$FICHIER_TEST $REPO_RAPPORTS_GENERES/$PROCESSEUR-$FICHIER_TEST
             mv $REPO_RAPPORTS_GENERES/$PROCESSEUR-$FICHIER_TEST $REPO_RAPPORTS
         fi  
-        
-        done
-
+    done
 done
 
 
