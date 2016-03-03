@@ -2,16 +2,11 @@
 
 rm index.html
 touch index.html
+echecs=0
+succes=0
 
 # Entête HTML
-echo "<!DOCTYPE html>
-<html>
-<head>
-<title>Rapport des tests par mutation</title>
-</head>
-<body>
 
-<h1>Rapport des tests par mutation</h1><p>" >> index.html
 
 # Dossier courant
 REPO=$(pwd) 
@@ -22,43 +17,46 @@ chmod 777 $REPO_RAPPORTS/*
 
 find $REPO_RAPPORTS -type f | while read rapport
 do
-    #echo $rapport
     NOM_PROC=$(basename $rapport);
 
-    #~ if grep ".txt" $NOM_PROC
-    #~ then
 
 
-
-    echo $NOM_PROC >> index.html
-
-
-    if grep 'errors="[1-9]"' $rapport
+    if grep 'failures="[1-9]"' $rapport
     then 
-        echo '<pre style="background-color:red">Erreur</pre>' >> index.html
-
-    elif grep 'failures="[1-9]"' $rapport
-    then 
-        echo '<pre style="background-color:orange">Failure</pre>' >> index.html
-
+        echecs=$(($echecs+1))
     elif grep 'failure' $rapport
     then
-        echo '<pre style="background-color:green">ok</pre>' >> index.html
-
-    
+        succes=$(($succes+1))
     fi
-    
-    echo "<br /><br />" >> index.html
-    
-    #~ fi   
-    
+        
 done
 
-# Fin HTML
-echo "</p></body>
-</html>" >> index.html
+echo "<html>
+  <head>
+    <script type=\"text/javascript\" src=\"https://www.gstatic.com/charts/loader.js\"></script>
+    <script type=\"text/javascript\">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
 
-# Ouvre le rapport sous firefox
-firefox index.html
+        var data = google.visualization.arrayToDataTable([
+          ['Tests par mutations', 'Mutants tués / vivants'],
+          ['Succès',     $succes],
+          ['Echecs',      $echecs],
+        ]);
 
+        var options = {
+          title: 'Résultat des tests par mutations'
+        };
 
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id=\"piechart\" style=\"width: 900px; height: 500px;\"></div>
+  </body>
+</html>
+" >> index.html
