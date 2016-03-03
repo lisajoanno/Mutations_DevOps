@@ -4,6 +4,7 @@ rm index.html
 touch index.html
 echecs=0
 succes=0
+ncompile=0
 
 # Entête HTML
 
@@ -19,25 +20,40 @@ find $REPO_RAPPORTS -type f | while read rapport
 do
     NOM_PROC=$(basename $rapport);
 
-
-
-    if grep 'failures="[1-9]"' $rapport
+    if grep 'errors="[1-9]"' $rapport
+    then 
+        ncompile=$(($ncompile+1))
+        echo $NOM_PROC >> ncompileName.txt
+    elif grep 'failures="[1-9]"' $rapport
     then 
         echecs=$(($echecs+1))
+        echo $NOM_PROC >> echecsName.txt
     elif grep 'failure' $rapport
     then
         succes=$(($succes+1))
+        echo $NOM_PROC >> successName.txt
     fi
+    # Fichiers temporaires pour stockers les valeurs
+    # des variables
     echo $echecs >> echecs.txt
     echo $succes >> succes.txt
-done
+    echo $ncompile >> ncompile.txt
+  done
 
+# Récupération des dernières valeurs
 fin=$(cat "echecs.txt" | tail -1)
 echecs=$fin
 
-
 find=$(cat "succes.txt" | tail -1)
 succes=$find
+
+fint=$(cat "succes.txt" | tail -1)
+ncompile=$find
+
+# On supprime les retours chariots par des espaces
+s=$(cat successName.txt | tr '\n' ' ')
+e=$(cat echecsName.txt | tr '\n' ' ')
+ec=$(cat ncompileName.txt | tr '\n' ' ')
 
 echo "<html>
   <head>
@@ -50,8 +66,9 @@ echo "<html>
 
         var data = google.visualization.arrayToDataTable([
           ['Tests par mutations', 'Mutants tués / vivants'],
-          ['Succès',     $succes],
-          ['Echecs',      $echecs],
+          ['$s',              $succes],
+          ['$e',              $echecs],
+          ['$ec',  $ncompile],
         ]);
 
         var options = {
@@ -70,5 +87,10 @@ echo "<html>
 </html>
 " >> index.html
 
+# Cleaning temporary files...
 rm echecs.txt
 rm succes.txt
+rm ncompile.txt
+rm successName.txt
+rm echecsName.txt
+rm ncompileName.txt
