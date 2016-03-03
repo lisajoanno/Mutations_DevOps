@@ -28,11 +28,20 @@ do
     then
         succes=$(($succes+1))
     fi
-        
+    echo $echecs >> echecs.txt
+    echo $succes >> succes.txt
 done
+
+fin=$(cat "echecs.txt" | tail -1)
+echecs=$fin
+
+
+find=$(cat "succes.txt" | tail -1)
+succes=$find
 
 echo "<html>
   <head>
+    <meta charset=\"UTF-8\">
     <script type=\"text/javascript\" src=\"https://www.gstatic.com/charts/loader.js\"></script>
     <script type=\"text/javascript\">
       google.charts.load('current', {'packages':['corechart']});
@@ -60,3 +69,6 @@ echo "<html>
   </body>
 </html>
 " >> index.html
+
+rm echecs.txt
+rm succes.txt
