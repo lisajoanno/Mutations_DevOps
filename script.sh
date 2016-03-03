@@ -68,7 +68,7 @@ do
     find $REPO_RAPPORTS_GENERES -type f | while read fichier
     do 
         FICHIER_TEST=$(basename $fichier)        
-        if [ $(grep -cx *.xml $REPO_RAPPORTS_GENERES/$FICHIER_TEST) -eq 0 ]; then
+        if [ $(find $fichier -name "*.xml" | wc -l) -gt 0 ]; then
             mv $REPO_RAPPORTS_GENERES/$FICHIER_TEST $REPO_RAPPORTS_GENERES/$PROCESSEUR-$FICHIER_TEST
             mv $REPO_RAPPORTS_GENERES/$PROCESSEUR-$FICHIER_TEST $REPO_RAPPORTS
         fi  
