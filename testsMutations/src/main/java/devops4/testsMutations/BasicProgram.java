@@ -7,6 +7,9 @@ public class BasicProgram {
     private boolean b = true;
 
     public BasicProgram() {
+    	try {
+    		
+    	} catch (Exception e) {};
         s = "My basic program";
     }
 
@@ -16,6 +19,14 @@ public class BasicProgram {
 
     public void changeStr(java.lang.String str) {
         this.s = str;
+    }
+    
+    public int shouldReturn2() {
+    	return 1+1;
+    }
+    
+    public String shouldBeVisible() {
+    	return "I am public";
     }
 }
 

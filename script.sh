@@ -14,7 +14,7 @@ REPO_RAPPORTS_GENERES=$REPO/testsMutations/target/surefire-reports
 REPO_RAPPORTS=$REPO/rapports
 
 # Options à donner à Maven. -q : quiet (que les erreurs et les tests)
-OPT_MVN='-q'
+OPT_MVN=''
 
 
 
@@ -22,9 +22,9 @@ OPT_MVN='-q'
 
 # On commence par tout nettoyer !
 ./clean.sh
+
+
 echo "Début de la chaîne de build..." 
-
-
 
 echo '\n   PACKAGE DE PROCESSOR' 
 cd processor/ 
@@ -40,17 +40,9 @@ cp -R src/main/java/devops4/testsMutations/* ../programme_original/
 echo '\n   TEST DU PROGRAMME ORIGINAL'
 # Exécution des test sur le projet original maven
 mvn $OPT_MVN test
-# Le code source ici est celui des mutants
-# Récupérer xml (surfire report), le déplacer
 
 
-
-# Boucle 
-#   Récupérer les mutants testsMutations/target/java/devops4/testsMutations
-#   les déplacer dans le src/main/java de testsMutations
-#   ced dans le pom pour ajouter le bon processor (boucle dans le fichier qui contient ../processor/src/main/java/devops4/processor)
-
-# stocker les xml et blabla
+# Tests sur les mutants & génération des rapports dans /rapports
 
 echo '\n   TESTS SUR LES MUTANTS'
 cd $REPO
@@ -83,5 +75,4 @@ do
     done
 done
 
-
-
+echo 'Fin des tests par mutation'

@@ -65,7 +65,7 @@
 	
 	<!-- Adding processors -->
       <processors>
-		<processor>devops4.processor.CatchProcessor</processor>
+		<processor>devops4.processor.ClassProcessor</processor>
       </processors>
       
     </configuration>
