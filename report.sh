@@ -18,7 +18,7 @@ chmod 777 $REPO_RAPPORTS/*
 
 find $REPO_RAPPORTS -type f | while read rapport
 do
-    NOM_PROC=$(basename $rapport);
+    NOM_PROC=$(basename $rapport "-TEST-devops4.testsMutations.BasicProgramTest.xml");
 
     if grep 'errors="[1-9]"' $rapport
     then 
@@ -54,6 +54,7 @@ ncompile=$find
 s=$(cat successName.txt | tr '\n' ' ')
 e=$(cat echecsName.txt | tr '\n' ' ')
 ec=$(cat ncompileName.txt | tr '\n' ' ')
+ncompile=$(($ncompile-1))
 
 echo "<html>
   <head>
@@ -63,20 +64,16 @@ echo "<html>
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
-
         var data = google.visualization.arrayToDataTable([
           ['Tests par mutations', 'Mutants tués / vivants'],
-          ['$s',              $succes],
-          ['$e',              $echecs],
-          ['$ec',  $ncompile],
+          ['Succès : $s',              $succes],
+          ['Erreur de compilation : $ec',  $ncompile],
+          ['Echecs : $e',              $echecs],
         ]);
-
         var options = {
           title: 'Résultat des tests par mutations'
         };
-
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
         chart.draw(data, options);
       }
     </script>
