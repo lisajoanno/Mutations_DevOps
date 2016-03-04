@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>devops4</groupId>
+  <artifactId>testsMutations</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <name>testsMutations</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <dependencies>
+
+    <!-- JUnit dependency -->
+      <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>4.10</version>
+      </dependency>
+
+    <!-- Spoon dependency -->
+      <dependency>
+        <groupId>fr.inria.gforge.spoon</groupId>
+        <artifactId>spoon-core</artifactId>
+        <version>5.0.2</version>
+      </dependency>
+
+	<!-- processor dependency -->
+      <dependency>
+      	<groupId>devops4</groupId>
+      	<artifactId>processor</artifactId>
+      	<version>0.0.1-SNAPSHOT</version>
+      	<scope>system</scope>
+      	<systemPath>${basedir}/../processor/target/processor-0.0.1-SNAPSHOT.jar</systemPath>
+      </dependency>
+  </dependencies>
+
+  <build>
+
+	<testSourceDirectory>src/test/java</testSourceDirectory>
+	<testOutputDirectory>target/result-test-mut</testOutputDirectory>
+    <plugins>
+    <plugin>
+      <groupId>fr.inria.gforge.spoon</groupId>
+      <artifactId>spoon-maven-plugin</artifactId>
+      <version>2.2</version>
+      <executions>
+        <execution>
+        <phase>generate-sources</phase>
+        <goals>
+          <goal>generate</goal>
+        </goals>
+      </execution>
+    </executions>
+
+    <configuration>
+    <outFolder>src/target/java</outFolder>
+    <additionalClasspathElements>
+    	<additionalClasspathElement>../processor/target</additionalClasspathElement>
+	</additionalClasspathElements>
+	
+	<!-- Adding processors -->
+      <processors>
+		<processor></processor>
+      </processors>
+      
+    </configuration>
+    </plugin>
+
+  </plugins>
+
+  </build>
+
+</project>

@@ -37,10 +37,17 @@ cd ../testsMutations
 mkdir -p ../programme_original/ # -p : pas de warning si le fichier existe déjà
 cp -R src/main/java/devops4/testsMutations/* ../programme_original/
 
+# On remet le pom sans processeurs
+cat $REPO/poms/pom_basique.xml > $REPO/testsMutations/pom.xml   
+
 echo '\n   TEST DU PROGRAMME ORIGINAL'
 # Exécution des test sur le projet original maven
 mvn $OPT_MVN test
 
+
+# Rendre propre le pom.xml de base (enlever le processeur de base)
+# bon pour l'instant faisons ça 
+cat $REPO/poms/pom_processor.xml > $REPO/testsMutations/pom.xml
 
 # Tests sur les mutants & génération des rapports dans /rapports
 
@@ -74,5 +81,8 @@ do
         fi  
     done
 done
+
+# On remet le pom sans processeurs
+cat $REPO/poms/pom_basique.xml > $REPO/testsMutations/pom.xml
 
 echo 'Fin des tests par mutation'
