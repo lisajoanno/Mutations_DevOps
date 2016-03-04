@@ -30,5 +30,10 @@ public class BasicProgramTest {
 	public void testShouldBeVisible() {
 		assertEquals(bp.shouldBeVisible(),"I am public");
 	}
+	
+	@Test
+	public void testOne() {
+		assertEquals(bp.getOne(), 1);
+	}
 
 }

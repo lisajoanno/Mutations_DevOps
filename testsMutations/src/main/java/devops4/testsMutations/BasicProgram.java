@@ -5,6 +5,7 @@ public class BasicProgram {
     private java.lang.String s;
 
     private boolean b = true;
+    private int one = 1;
 
     public BasicProgram() {
     	try {
@@ -27,6 +28,10 @@ public class BasicProgram {
     
     public String shouldBeVisible() {
     	return "I am public";
+    }
+    
+    public int getOne() {
+    	return this.one;
     }
 }
 
