@@ -32,8 +32,13 @@ public class BasicProgramTest {
 	}
 	
 	@Test
-	public void testOne() {
+	public void testWhile() {
 		assertEquals(bp.whileIncrement(), 10);
+	}
+	
+	@Test
+	public void testIf() {
+		assertTrue(bp.worksWithOrOnly());
 	}
 
 }

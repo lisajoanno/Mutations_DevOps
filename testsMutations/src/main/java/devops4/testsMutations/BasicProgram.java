@@ -36,5 +36,11 @@ public class BasicProgram {
     		i++;
     	return i;
     }
+    
+	public boolean worksWithOrOnly() {
+    	if (true && false)
+    		return false;
+    	return true;
+    }
 }
 
