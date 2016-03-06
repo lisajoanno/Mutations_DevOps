@@ -31,11 +31,11 @@ Cette commande se décompose en 3 parties :
 * Compilation et test du programme original dans le répertoire testsMutations/ avec <i>mvn test</i>. 
 * Pour chaque processeur présent dans processor/ :
 
-  ** Modification du <i>pom.xml</i> de testsMutations/ pour faire muter le programme original selon le processeur courant .
+  * Modification du <i>pom.xml</i> de testsMutations/ pour faire muter le programme original selon le processeur courant .
   
-  ** Lancement de <i>mvn test</i> pour tester le programme muté.
+  * Lancement de <i>mvn test</i> pour tester le programme muté.
   
-  ** Copie du rapport <i>XML</i> de test dans un dossier rapports/.
+  * Copie du rapport <i>XML</i> de test dans un dossier rapports/.
   
 
 		$ ./report.sh
