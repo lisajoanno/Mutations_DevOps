@@ -38,6 +38,7 @@ Cette commande se décompose en 3 parties :
   * Copie du rapport <i>XML</i> de test dans un dossier rapports/.
 
 
+
 		$ ./report.sh
 
 Cette commande va analyser les rapports de tests présents dans rapports/ pour générer une page <i>index.html</i> rendant compte des différents effets des mutations sur les tests. 
