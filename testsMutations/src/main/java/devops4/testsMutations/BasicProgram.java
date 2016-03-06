@@ -5,7 +5,6 @@ public class BasicProgram {
     private java.lang.String s;
 
     private boolean b = true;
-    private int one = 1;
 
     public BasicProgram() {
     	try {
@@ -30,8 +29,12 @@ public class BasicProgram {
     	return "I am public";
     }
     
-    public int getOne() {
-    	return this.one;
+    public int whileIncrement() {
+    	int i = 0;
+    	
+    	while (i < 10)
+    		i++;
+    	return i;
     }
 }
 

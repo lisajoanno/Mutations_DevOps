@@ -33,7 +33,7 @@ public class BasicProgramTest {
 	
 	@Test
 	public void testOne() {
-		assertEquals(bp.getOne(), 1);
+		assertEquals(bp.whileIncrement(), 10);
 	}
 
 }
