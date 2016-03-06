@@ -36,7 +36,7 @@ Cette commande se décompose en 3 parties :
   * Lancement de <i>mvn test</i> pour tester le programme muté.
   
   * Copie du rapport <i>XML</i> de test dans un dossier rapports/.
-  
+
 
 		$ ./report.sh
 
