@@ -20,16 +20,15 @@ find $REPO_RAPPORTS -type f | while read rapport
 do
     NOM_PROC=$(basename $rapport "-TEST-devops4.testsMutations.BasicProgramTest.xml");
 
-    if grep 'errors="[1-9]"' $rapport
+    if grep 'errors="[^0]"' $rapport
     then 
         ncompile=$(($ncompile+1))
         echo $NOM_PROC >> ncompileName.txt
-    elif grep 'failures="[1-9]"' $rapport
+    elif grep 'failures="[^0]"' $rapport
     then 
         echecs=$(($echecs+1))
         echo $NOM_PROC >> echecsName.txt
-    elif grep 'failure' $rapport
-    then
+    else
         succes=$(($succes+1))
         echo $NOM_PROC >> successName.txt
     fi
