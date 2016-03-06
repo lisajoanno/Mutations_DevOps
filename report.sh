@@ -47,14 +47,13 @@ echecs=$fin
 find=$(cat "succes.txt" | tail -1)
 succes=$find
 
-fint=$(cat "succes.txt" | tail -1)
-ncompile=$find
+fint=$(cat "ncompile.txt" | tail -1)
+ncompile=$fint
 
 # On supprime les retours chariots par des espaces
 s=$(cat successName.txt | tr '\n' ' ')
 e=$(cat echecsName.txt | tr '\n' ' ')
 ec=$(cat ncompileName.txt | tr '\n' ' ')
-ncompile=$(($ncompile-1))
 
 echo "<html>
   <head>
