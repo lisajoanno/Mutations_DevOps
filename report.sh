@@ -2,12 +2,6 @@
 
 rm index.html
 touch index.html
-echecs=0
-succes=0
-ncompile=0
-
-# Entête HTML
-
 
 # Dossier courant
 REPO=$(pwd) 
@@ -16,15 +10,27 @@ REPO_RAPPORTS=$REPO/rapports
 # Donner les droits en lecture aux rapports
 chmod 777 $REPO_RAPPORTS/*
 
+
+
+
+
+
+
+#-------------------------------          SUCCESS RATE 
+
+echecs=0
+succes=0
+ncompile=0
+
 find $REPO_RAPPORTS -type f | while read rapport
 do
     NOM_PROC=$(basename $rapport "-TEST-devops4.testsMutations.BasicProgramTest.xml");
 
-    if grep 'errors="[^0]"' $rapport
+    if grep -q 'errors="[^0]"' $rapport
     then 
         ncompile=$(($ncompile+1))
         echo $NOM_PROC >> ncompileName.txt
-    elif grep 'failures="[^0]"' $rapport
+    elif grep -q 'failures="[^0]"' $rapport
     then 
         echecs=$(($echecs+1))
         echo $NOM_PROC >> echecsName.txt
@@ -56,6 +62,7 @@ ec=$(cat ncompileName.txt | tr '\n' ' ')
 
 echo "<html>
   <head>
+    <LINK href=\"style.css\" rel=\"stylesheet\" type=\"text/css\">
     <meta charset=\"UTF-8\">
     <script type=\"text/javascript\" src=\"https://www.gstatic.com/charts/loader.js\"></script>
     <script type=\"text/javascript\">
@@ -77,10 +84,9 @@ echo "<html>
     </script>
   </head>
   <body>
-    <div id=\"piechart\" style=\"width: 900px; height: 500px;\"></div>
-  </body>
-</html>
-" >> index.html
+    <h1>Rapport de test après mutations</h1>
+    <h2>Taux de succès des tests après les mutations</h2>
+    <div id=\"piechart\" style=\"width: 900px; height: 500px;\"></div>" >> index.html
 
 # Cleaning temporary files...
 rm echecs.txt
@@ -89,3 +95,48 @@ rm ncompile.txt
 rm successName.txt
 rm echecsName.txt
 rm ncompileName.txt
+
+
+
+
+
+#-------------------------------          DETAIL DES TESTS PAR MUTATION
+
+
+# Génération du détail des tests par mutation
+echo "<h2>Détails des tests par mutation</h2>" >> index.html
+
+# Par rapport de test
+find $REPO_RAPPORTS -type f | while read rapport
+do
+    # On récupère le nom
+    NOM_PROC=$(basename $rapport "-TEST-devops4.testsMutations.BasicProgramTest.xml")
+    # On l'ajoute au html
+    echo "<h4> Processeur : "$NOM_PROC"</h4><p>" >> index.html
+    # On ajoute les tests qui sont passés (ils n'ont pas d'enfant "failure")
+    echo '<p style="color:green">' >> index.html
+    echo $(xmllint --xpath "/testsuite/testcase[not(failure)]/@name" $rapport 2>/dev/null ) >> index.html
+    echo '</p>' >> index.html    
+    # On ajoute les tests qui ne sont pas passés (ils ont un enfant "failure")
+    echo '<p style="color:red">' >> index.html
+    echo $(xmllint --xpath "/testsuite/testcase[failure]/@name" $rapport 2>/dev/null) >> index.html
+    # On ajoute le "message" ou le "type" de l'échec du test
+    echo $(xmllint --xpath "/testsuite/testcase[failure]/failure/@message" $rapport 2>/dev/null ) >> index.html 
+    echo $(xmllint --xpath "/testsuite/testcase[failure]/failure/@type" $rapport 2>/dev/null ) >> index.html
+    echo '</p>' >> index.html  
+    echo "<br/></p>" >> index.html
+done
+
+
+
+
+
+
+#-------------------------------          DETAIL PAR TEST
+# Génération du détail des tests par mutation
+echo "<h2>Détail par test</h2>" >> index.html
+
+
+
+echo "</body>
+</html>" >> index.html

@@ -1,0 +1,19 @@
+body {
+    font-family: "Courier New";
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+h1 {
+    margin: 8%;
+    border-width:5px;	
+    border-style:double;
+}
+
+h2 {
+    margin: 5% 8% 4% 8%;
+    border-width:2px;	
+    border-style:double;
+}
