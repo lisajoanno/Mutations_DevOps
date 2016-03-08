@@ -30,11 +30,15 @@ Cette commande se décompose en 3 parties :
 * Création des processeurs spoon dans le répertoire processor/ avec <i>mvn package</i>. Ceci aura pour effet de compiler les processeurs et de les rendre disponibles pour la suite.
 * Compilation et test du programme original dans le répertoire testsMutations/ avec <i>mvn test</i>. 
 * Pour chaque processeur présent dans processor/ :
-  ** Modification du <i>pom.xml</i> de testsMutations/ pour faire muter le programme original selon le processeur courant .
-  ** Lancement de <i>mvn test</i> pour tester le programme muté.
-  ** Copie du rapport <i>XML</i> de test dans un dossier rapports/.
 
-		$ ./report.sh
+  * Modification du <i>pom.xml</i> de testsMutations/ pour faire muter le programme original selon le processeur courant .
+  
+  * Lancement de <i>mvn test</i> pour tester le programme muté.
+  
+  * Copie du rapport <i>XML</i> de test dans un dossier rapports/.
+
+
+	$ ./report.sh
 
 Cette commande va analyser les rapports de tests présents dans rapports/ pour générer une page <i>index.html</i> rendant compte des différents effets des mutations sur les tests. 
 
