@@ -14,15 +14,7 @@ REPO_RAPPORTS_GENERES=$REPO/testsMutations/target/surefire-reports
 REPO_RAPPORTS=$REPO/rapports
 
 # Options à donner à Maven. -q : quiet (que les erreurs et les tests)
-OPT_MVN=''
-
-
-
-
-
-# On commence par tout nettoyer !
-./clean.sh
-
+OPT_MVN='-q'
 
 echo "Début de la chaîne de build..." 
 

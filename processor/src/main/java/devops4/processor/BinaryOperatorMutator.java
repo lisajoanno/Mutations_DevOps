@@ -7,11 +7,17 @@ import spoon.reflect.declaration.CtElement;
 
 /** a trivial mutation operator that transforms all binary operators to minus ("-") */
 public class BinaryOperatorMutator extends AbstractProcessor<CtElement> {
-	public void process(CtElement candidate) {
-		if (!(candidate instanceof CtBinaryOperator)) {
-			return;
+	@Override
+	public boolean isToBeProcessed(CtElement candidate) {
+		if (candidate instanceof CtBinaryOperator) {
+			CtBinaryOperator op = (CtBinaryOperator) candidate;
+			return op.getKind() == BinaryOperatorKind.PLUS;
 		}
-		CtBinaryOperator op = (CtBinaryOperator)candidate;
+		return false;
+	}
+	
+	public void process(CtElement candidate) {
+		CtBinaryOperator op = (CtBinaryOperator) candidate;
 		op.setKind(BinaryOperatorKind.MINUS);
 	}
 }
