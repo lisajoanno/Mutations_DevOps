@@ -19,7 +19,15 @@ Cette commande va exécuter une série d'actions, listée ci-dessous :
   <ul>
     <li>Assemblage du code compilé du projet <b>processor</b> pour obtenir un .jar exécutable.</li>
     <li>Copie du répertoire contenant le code source du projet testsMutations dans un dossier externe aux deux projets.</li>
-    <li>Exécution des tests sur le code source d'origine</li>
+    <li>Compilation et exécution des tests sur le code source d'origine du projet <b>testsMutations</b>.</li>
+    <li>Modification du fichier pom.xml, en vue de l'application des processeurs sur le code source.</li>
+    <li>Pour chaque processeur, faire :</li>
+    <ul>
+        <li>Modifier le pom.xml du projet testsMutations (on ajoute le nom du processeur spoon à appliquer).</li>
+        <li>Compilation et exécution des tests sur le code généré mutant.</li>
+        <li>Génération du rapport au format xml et déplacement dans le dossier externe <i>rapports</i>.</li>
+    </ul>
+    <li>Restitution de l'ancien pom.xml dans le projet <b>testsMutations</b>.</li>
   </ul>
 </ul>
 
