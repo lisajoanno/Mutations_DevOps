@@ -23,12 +23,15 @@ Cette commande va exécuter une série d'actions, listée ci-dessous :
     <li>Modification du fichier pom.xml, en vue de l'application des processeurs sur le code source.</li>
     <li>Pour chaque processeur, faire :</li>
     <ul>
-        <li>Modifier le pom.xml du projet testsMutations (on ajoute le nom du processeur spoon à appliquer).</li>
-        <li>Compilation et exécution des tests sur le code généré mutant.</li>
-        <li>Génération du rapport au format xml et déplacement dans le dossier externe <i>rapports</i>.</li>
+        <li>Modifier le pom.xml du projet testsMutations (on ajoute le nom du processeur Spoon à appliquer).</li>
+        <li>Compiler et exécuter des tests sur le code généré mutant.</li>
+        <li>Générer un rapport de ces tests au format xml et les déplacer dans un dossier externe au projet (<i>../rapports</i>).</li>
     </ul>
     <li>Restitution de l'ancien pom.xml dans le projet <b>testsMutations</b>.</li>
   </ul>
 </ul>
 
     $ ./report.sh
+Cette commande génère une page <i>index.html</i> qui est un bilan graphique des résultats des tests par mutations.
+On génère un camembert afin de voir combien de mutants ont été tués, combien sont encore en vie et combien ont généré des erreurs de compilation.
+On peut également consulter le nom des processeurs concernés par ces résultats.
