@@ -83,4 +83,5 @@ public class LightTest {
 		assertTrue(corridor.isLocked());
 	}
 
+	
 }
