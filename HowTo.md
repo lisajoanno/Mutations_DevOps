@@ -1,7 +1,7 @@
 #Présentation du travail#
 
 ##Structure du projet##
-Notre framework se compose de deux projets Maven : un projet <b>processor</b> contenant les processeurs spoon à appliquer sur le code source, qui est contenu dans notre second projet Maven <b>testsMutations</b>.
+La description de l'architecture du framework est décrite dans le fichier <i><b>Report.md</b></i>.
 
 ##Exécution du framework##
 
