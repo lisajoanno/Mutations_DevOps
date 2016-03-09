@@ -1,6 +1,6 @@
 #! /bin/sh
 
-rm index.html
+rm -f index.html
 touch index.html
 
 # Dossier courant
@@ -24,7 +24,7 @@ ncompile=0
 
 find $REPO_RAPPORTS -type f | while read rapport
 do
-    NOM_PROC=$(basename $rapport "-TEST-devops4.testsMutations.BasicProgramTest.xml");
+    NOM_PROC=$(basename $rapport ".xml");
 
     if grep -q 'errors="[^0]"' $rapport
     then 
@@ -110,7 +110,7 @@ echo "<h2>Détails des tests par mutation</h2>" >> index.html
 find $REPO_RAPPORTS -type f | while read rapport
 do
     # On récupère le nom
-    NOM_PROC=$(basename $rapport "-TEST-devops4.testsMutations.BasicProgramTest.xml")
+    NOM_PROC=$(basename $rapport ".xml")
     # On l'ajoute au html
     echo "<h4> Processeur : "$NOM_PROC"</h4><p>" >> index.html
     # On ajoute les tests qui sont passés (ils n'ont pas d'enfant "failure")

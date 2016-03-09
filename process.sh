@@ -14,7 +14,7 @@ REPO_RAPPORTS_GENERES=$REPO/testsMutations/target/surefire-reports
 REPO_RAPPORTS=$REPO/rapports
 
 # Options à donner à Maven. -q : quiet (que les erreurs et les tests)
-OPT_MVN='-q'
+OPT_MVN=''
 
 echo "Début de la chaîne de build..." 
 

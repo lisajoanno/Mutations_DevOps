@@ -11,7 +11,11 @@ public class BinaryOperatorMutator extends AbstractProcessor<CtElement> {
 	public boolean isToBeProcessed(CtElement candidate) {
 		if (candidate instanceof CtBinaryOperator) {
 			CtBinaryOperator op = (CtBinaryOperator) candidate;
-			return op.getKind() == BinaryOperatorKind.PLUS;
+			if (op.getLeftHandOperand().getClass().getName().equals("java.lang.Integer")
+				&&
+				op.getRightHandOperand().getClass().getName().equals("java.lang.Integer")) {
+				return op.getKind() == BinaryOperatorKind.PLUS;
+			}
 		}
 		return false;
 	}
