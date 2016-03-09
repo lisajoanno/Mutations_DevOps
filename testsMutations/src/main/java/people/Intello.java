@@ -2,6 +2,8 @@ package people;
 
 public class Intello extends Person {
 
+	private String knowledge;
+
 	/**
 	 * Constructor
 	 * 
@@ -9,6 +11,19 @@ public class Intello extends Person {
 	 */
 	public Intello(String name) {
 		super(name);
+	}
+
+	public Intello(String name, String knowledge) {
+		super(name);
+		this.setKnowledge(knowledge);
+	}
+
+	public String getKnowledge() {
+		return knowledge;
+	}
+
+	public void setKnowledge(String knowledge) {
+		this.knowledge = knowledge;
 	}
 
 	@Override

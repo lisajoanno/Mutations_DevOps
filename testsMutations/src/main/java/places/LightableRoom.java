@@ -32,17 +32,10 @@ public abstract class LightableRoom extends Room {
 	 * 
 	 */
 	public void action(Student theStudent) {
-		if (this.isLocked()) {
-			if (!(theStudent.isHaveKey())) {
-				System.out.println("The student doesn't have the key. He can't enter in the room.");
-			} else {
-				this.enter();
-				System.out.println("The student is in the " + this.getName());
-			}
-		} else {
+		if (this.isLocked() && theStudent.isHaveKey()) {
 			this.enter();
-			System.out.println("The student is in the " + this.getName());
-		}
+		} else if (!(this.isLocked()))
+			this.enter();
 	}
 
 	public void enter() {
@@ -58,13 +51,10 @@ public abstract class LightableRoom extends Room {
 		if (this.getNbStudent() == 0) {
 			this.setIsLocked(true);
 			this.setLight(false);
-			System.out.println("The student switch off the ligth.");
 			// the last student lock the room and turn off the light
 		}
 
 	}
-
-	// getter & setter method
 
 	/**
 	 * 

@@ -71,7 +71,7 @@ public class UnGame {
 	}
 
 	/**
-	 * A method to determine (with a radom method) if the student have the key
+	 * A method to determine (with a random method) if the student have the key
 	 * 
 	 */
 	public boolean initKey() {
@@ -83,7 +83,7 @@ public class UnGame {
 	}
 
 	/**
-	 * A method to determine (with a radom method) if the student have the
+	 * A method to determine (with a random method) if the student have the
 	 * digicode
 	 * 
 	 */

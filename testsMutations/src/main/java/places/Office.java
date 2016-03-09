@@ -31,18 +31,8 @@ public class Office extends LightableRoom {
 	 * @param theStudent
 	 */
 	public void search(Student theStudent) {
-		System.out.println("The student search something in the office.");
-		if ((this.isLocked())) {
-			System.out.println("The door is locked.");
-		} else if (!this.isLight()) {
-			System.out.println("The student can't see anything. It is too dark.");
-		} else {
-			if ((!this.isHaveAnObject())) {
-				System.out.println("The student found nothing.");
-			} else {
-				System.out.println("The student found the combination of the digicode !");
-				theStudent.setHaveDigicode(true);
-			}
+		if (!(this.isLocked()) && this.isLight() && this.isHaveAnObject()) {
+			theStudent.setHaveDigicode(true);
 		}
 	}
 
