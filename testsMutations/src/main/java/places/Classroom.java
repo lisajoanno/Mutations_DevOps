@@ -28,17 +28,11 @@ public class Classroom extends UnlightableRoom {
 	 * If the student have a key, he can open the classroom door
 	 */
 	public void action(Student theStudent) {
-		if (this.isLocked()) {
-			if (!(theStudent.isHaveKey())) {
-				System.out.println("The student doesn't have the key. He can't enter in that classroom.");
-			} else {
-				this.enter();
-				System.out.println("The student enter in the class.");
-			}
-		} else {
+		if (this.isLocked() && theStudent.isHaveKey())
 			this.enter();
-			System.out.println("The student enter in the class.");
-		}
+		else if (!this.isLocked())
+			this.enter();
+
 	}
 
 	/**

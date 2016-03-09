@@ -21,7 +21,9 @@ public class Lab extends UnlightableRoom {
 	 * 
 	 * @param name
 	 * @param isLocked
+	 *            true by default
 	 * @param code
+	 * @param nbStudent
 	 */
 	public Lab(String name, boolean isLocked, String code, int nbStudent) {
 		super(name, true, nbStudent);
@@ -34,16 +36,13 @@ public class Lab extends UnlightableRoom {
 	 */
 	public void action(Student theStudent) {
 		if (this.isLocked()) {
-			if (!(theStudent.isHaveDigicode())) {
-				digicode();
-			} else {
+			if (theStudent.isHaveDigicode())
 				this.enter();
-				System.out.println("The student is in the " + this.getName() + " lab.");
-			}
-		} else {
+			else
+				digicode();
+		} else if (!this.isLocked())
 			this.enter();
-			System.out.println("The student is in the " + this.getName() + " lab.");
-		}
+
 	}
 
 	/**
@@ -58,12 +57,11 @@ public class Lab extends UnlightableRoom {
 			r = 1 + rand.nextInt(4);
 			myCode += r;
 		}
-		System.out.println("The student tries the combination : " + myCode);
+		// System.out.println("The student tries the combination : " + myCode);
 		if (myCode.equals(this.getCode())) {
 			this.enter();
-			System.out.println("The student is in the " + this.getName() + " lab.");
-		} else {
-			System.out.println("The student failed to open the door !");
+			// System.out.println("The student is in the " + this.getName() + "
+			// lab.");
 		}
 	}
 
@@ -88,7 +86,6 @@ public class Lab extends UnlightableRoom {
 		randNumber = rand.nextInt(3);
 		this.setNbStudent(randNumber);
 	}
-
 
 	/**
 	 *
