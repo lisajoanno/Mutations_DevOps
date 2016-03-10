@@ -62,6 +62,7 @@ ec=$(cat ncompileName.txt | tr '\n' ' ')
 
 echo "<html>
   <head>
+    <title>Rapport de tests</title>
     <LINK href=\"style.css\" rel=\"stylesheet\" type=\"text/css\">
     <meta charset=\"UTF-8\">
 
@@ -107,6 +108,8 @@ rm ncompileName.txt
 
 # Génération du détail des tests par mutation
 echo "<h2>Détails des tests par mutation</h2>" >> index.html
+
+echo "<p>Voici, par mutation, les tests qui sont passés (en vert) et ceux qui ont engendré soit un échec, soit une erreur de compilation, ainsi que la raison de l'échec (en rouge). </p>" >> index.html
 
 # Par rapport de test
 find $REPO_RAPPORTS -type f | while read rapport
@@ -185,6 +188,12 @@ do
     do  
         echo $line >> testsFail.txt
     done 
+    
+    # Décommenter pour que l'histogramme affiche aussi le nombre d'erreurs de compilation.
+    #~ echo "cat /testsuite/testcase[error]/@name" | xmllint --shell $rapport | while read line; 
+    #~ do  
+        #~ echo $line >> testsFail.txt
+    #~ done     
 done
 
 
@@ -229,6 +238,7 @@ echo "      ]);
       chart.draw(data, options);
   }
   </script>
+<p>Sur ce graphe, on ne voit que le nombre de fois où le test n'est pas passé, on ne compte pas les erreurs de compilation qu'il a engendré.</p>
 <div id=\"columnchart_plain\" style=\"width: 900px; height: 300px;\"></div>
 </body>
 </html>
