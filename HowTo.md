@@ -3,6 +3,7 @@
 ##Structure du projet##
 La description de l'architecture du framework est décrite dans le fichier <i><b>Report.md</b></i>.
 
+<p>
 /
 ├── img (images)
 ├── poms
@@ -18,6 +19,7 @@ La description de l'architecture du framework est décrite dans le fichier <i><b
 ├── clean.sh
 ├── process.sh
 └── report.sh
+</p>
 
 ##Exécution du framework##
 
@@ -50,7 +52,7 @@ Cette commande va exécuter une série d'actions, listée ci-dessous :
     $ ./report.sh
 Cette commande génère une page <i>index.html</i> qui est un bilan graphique des résultats des tests par mutations.
 On génère un camembert afin de voir combien de mutants ont été tués, combien sont encore en vie et combien ont généré des erreurs de compilation.
-On peut également consulter le nom des processeurs concernés par ces résultats et le détail, par mutation, des tests qui sont passés ou non..
+On peut également consulter le nom des processeurs concernés par ces résultats et le détail, par mutation, des tests qui sont passés ou non.
 On trouve dans histogrammeTest.html un histogramme qui indique combien de fois les tests ne sont pas passés, pour se donner une idée des tests les plus pertinents.
 
 
