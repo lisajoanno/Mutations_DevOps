@@ -1,0 +1,152 @@
+<html>
+  <head>
+    <LINK href="style.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Tests par mutations', 'Mutants tués / vivants'],
+          ['Succès : SetIfCondFalse-TEST-devops4.testsMutations.BasicProgramTest BreakInWhile-TEST-devops4.testsMutations.LightTest ReplaceInfBySuppInWhileProcessor-TEST-devops4.testsMutations.LightTest BinaryOperatorMutator-TEST-devops4.testsMutations.LightTest TurnPublicToPrivate-TEST-devops4.testsMutations.LightTest BinaryOperatorMutator-TEST-devops4.testsMutations.BasicProgramTest ',              6],
+          ['Erreur de compilation : TurnPublicToPrivate-TEST-devops4.testsMutations.BasicProgramTest ',  1],
+          ['Echecs : SetIfCondTrue-TEST-devops4.testsMutations.BasicProgramTest SetIfCondTrue-TEST-devops4.testsMutations.LightTest BreakInWhile-TEST-devops4.testsMutations.BasicProgramTest SetIfCondFalse-TEST-devops4.testsMutations.LightTest ReplaceInfBySuppInWhileProcessor-TEST-devops4.testsMutations.BasicProgramTest ',              5],
+        ]);
+        var options = {
+          title: 'Résultat des tests par mutations'
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+    </script>
+    
+  </head>
+  <body>
+    <h1>Rapport de test après mutations</h1>
+    <h2>Taux de succès des tests après les mutations</h2>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+<h2>Détails des tests par mutation</h2>
+<h4> Processeur : SetIfCondFalse-TEST-devops4.testsMutations.BasicProgramTest</h4><p>
+<p style="color:green">
+name="testDoNothingMethod" name="testShouldReturn2" name="testShouldBeVisible" name="testWhile" name="testIf" name="testBreak"
+</p>
+<p style="color:red">
+
+
+
+</p>
+<br/></p>
+<h4> Processeur : SetIfCondTrue-TEST-devops4.testsMutations.BasicProgramTest</h4><p>
+<p style="color:green">
+name="testDoNothingMethod" name="testShouldReturn2" name="testShouldBeVisible" name="testWhile" name="testBreak"
+</p>
+<p style="color:red">
+name="testIf"
+
+type="java.lang.AssertionError"
+</p>
+<br/></p>
+<h4> Processeur : BreakInWhile-TEST-devops4.testsMutations.LightTest</h4><p>
+<p style="color:green">
+name="actionTest" name="isTheLightCanBeSwitched" name="addTest" name="leaveTest"
+</p>
+<p style="color:red">
+
+
+
+</p>
+<br/></p>
+<h4> Processeur : ReplaceInfBySuppInWhileProcessor-TEST-devops4.testsMutations.LightTest</h4><p>
+<p style="color:green">
+name="isTheLightCanBeSwitched" name="leaveTest" name="actionTest" name="addTest"
+</p>
+<p style="color:red">
+
+
+
+</p>
+<br/></p>
+<h4> Processeur : SetIfCondTrue-TEST-devops4.testsMutations.LightTest</h4><p>
+<p style="color:green">
+name="addTest" name="leaveTest" name="actionTest"
+</p>
+<p style="color:red">
+name="isTheLightCanBeSwitched"
+
+type="java.lang.AssertionError"
+</p>
+<br/></p>
+<h4> Processeur : TurnPublicToPrivate-TEST-devops4.testsMutations.BasicProgramTest</h4><p>
+<p style="color:green">
+name="testDoNothingMethod" name="testShouldReturn2" name="testShouldBeVisible" name="testWhile" name="testIf" name="testBreak"
+</p>
+<p style="color:red">
+
+
+
+</p>
+<br/></p>
+<h4> Processeur : BreakInWhile-TEST-devops4.testsMutations.BasicProgramTest</h4><p>
+<p style="color:green">
+name="testDoNothingMethod" name="testShouldReturn2" name="testShouldBeVisible" name="testIf"
+</p>
+<p style="color:red">
+name="testWhile" name="testBreak"
+message="expected:&lt;1&gt; but was:&lt;10&gt;" message="expected:&lt;1&gt; but was:&lt;10&gt;"
+type="java.lang.AssertionError" type="java.lang.AssertionError"
+</p>
+<br/></p>
+<h4> Processeur : BinaryOperatorMutator-TEST-devops4.testsMutations.LightTest</h4><p>
+<p style="color:green">
+name="actionTest" name="addTest" name="isTheLightCanBeSwitched" name="leaveTest"
+</p>
+<p style="color:red">
+
+
+
+</p>
+<br/></p>
+<h4> Processeur : TurnPublicToPrivate-TEST-devops4.testsMutations.LightTest</h4><p>
+<p style="color:green">
+name="addTest" name="actionTest" name="isTheLightCanBeSwitched" name="leaveTest"
+</p>
+<p style="color:red">
+
+
+
+</p>
+<br/></p>
+<h4> Processeur : BinaryOperatorMutator-TEST-devops4.testsMutations.BasicProgramTest</h4><p>
+<p style="color:green">
+name="testShouldReturn2" name="testShouldBeVisible" name="testWhile" name="testIf" name="testBreak" name="testDoNothingMethod"
+</p>
+<p style="color:red">
+
+
+
+</p>
+<br/></p>
+<h4> Processeur : SetIfCondFalse-TEST-devops4.testsMutations.LightTest</h4><p>
+<p style="color:green">
+name="actionTest" name="addTest"
+</p>
+<p style="color:red">
+name="leaveTest" name="isTheLightCanBeSwitched"
+message="expected:&lt;0&gt; but was:&lt;1&gt;"
+type="java.lang.AssertionError" type="java.lang.AssertionError"
+</p>
+<br/></p>
+<h4> Processeur : ReplaceInfBySuppInWhileProcessor-TEST-devops4.testsMutations.BasicProgramTest</h4><p>
+<p style="color:green">
+name="testDoNothingMethod" name="testShouldReturn2" name="testShouldBeVisible" name="testIf"
+</p>
+<p style="color:red">
+name="testWhile" name="testBreak"
+message="expected:&lt;0&gt; but was:&lt;10&gt;" message="expected:&lt;0&gt; but was:&lt;10&gt;"
+type="java.lang.AssertionError" type="java.lang.AssertionError"
+</p>
+<br/></p>
+</body>
+</html>

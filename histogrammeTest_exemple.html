@@ -1,0 +1,54 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Détail par test</title>
+    <LINK href="style.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+  </head>
+<h2>Détail par test</h2>
+  <body class="devsite-layout-docs devsite-framebox">
+<p style="display: none; height: 0; width: 0">This is a snippet from developers.google.com</p>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Nom du test', 'Echecs'],
+['name="testDoNothingMethod"', 
+0
+],
+['name="testShouldReturn2"', 
+0
+],
+['name="testShouldBeVisible"', 
+0
+],
+['name="testWhile"', 
+2
+],
+['name="testIf"', 
+1
+],
+['name="testBreak"', 
+2
+],
+      ]);
+      var options = {
+        title: "Nombre d'échecs par test",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: '95%'},
+        legend: { position: 'none' },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById('columnchart_plain'));
+      chart.draw(data, options);
+  }
+  </script>
+<div id="columnchart_plain" style="width: 900px; height: 300px;"></div>
+</body>
+</html>
+
