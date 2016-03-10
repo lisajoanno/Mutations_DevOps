@@ -46,4 +46,9 @@ public class BasicProgramTest {
 	public void testBreak() {
 		assertEquals(bp.leBreak(), 10);
 	}
+	
+	@Test
+	public void testFor() {
+		assertEquals(bp.leFor(), 4);
+	}
 }

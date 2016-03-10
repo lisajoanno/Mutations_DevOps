@@ -33,8 +33,11 @@ public class BasicProgram {
 	public int whileIncrement() {
 		int i = 0;
 
-		while (i < 10)
+		while (i < 10) {
 			i++;
+			int zheng = 1;
+			String king = "zheng";
+		}
 		return i;
 	}
 
@@ -51,5 +54,13 @@ public class BasicProgram {
 			i++;
 		}
 		return i;
+	}
+	
+	public int leFor() {
+		int quatre = 0;
+		for (int i = 0; i < 4; i++)
+			quatre++;
+		
+		return quatre;
 	}
 }
