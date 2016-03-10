@@ -1,7 +1,7 @@
 #Présentation du travail#
 
 ##Structure du projet##
-La description de l'architecture du framework est décrite dans le fichier <i><b>Report.md</b></i>.
+La description de l'architecture du framework se trouve dans le fichier <i><b>Report.md</b></i>.
 
 <pre>
 /
@@ -32,7 +32,7 @@ Ce script lance en réalité 3 commandes qui représentent les 3 étapes de cré
 Cette commande nettoie entièrement le répertoire du projet, en lançant des mvn clean dans les 2 projets Maven et en supprimant notamment les rapports de tests du dernier lancement du framework.
 
     $ ./process.sh
-Cette commande va exécuter une série d'actions, listée ci-dessous :
+Cette commande va exécuter une série d'actions, listées ci-dessous :
 <ul>
   <ul>
     <li>Assemblage du code compilé du projet <b>processor</b> pour obtenir un .jar exécutable.</li>
@@ -51,7 +51,7 @@ Cette commande va exécuter une série d'actions, listée ci-dessous :
 
     $ ./report.sh
 Cette commande génère une page <i>index.html</i> qui est un bilan graphique des résultats des tests par mutations.
-On génère un camembert afin de voir combien de mutants ont été tués, combien sont encore en vie et combien ont généré des erreurs de compilation.
+On génère un diagramme circulaire afin de voir combien de mutants ont été tués, combien sont encore en vie et combien ont généré des erreurs de compilation.
 On peut également consulter le nom des processeurs concernés par ces résultats et le détail, par mutation, des tests qui sont passés ou non.
 On trouve dans histogrammeTest.html un histogramme qui indique combien de fois les tests ne sont pas passés, pour se donner une idée des tests les plus pertinents.
 
