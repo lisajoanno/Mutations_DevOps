@@ -16,7 +16,7 @@ chmod 777 $REPO_RAPPORTS/*
 
 
 
-#-------------------------------          SUCCESS RATE 
+#-------------------------------          TAUX DE SUCCES
 
 echecs=0
 succes=0
@@ -64,6 +64,7 @@ echo "<html>
   <head>
     <LINK href=\"style.css\" rel=\"stylesheet\" type=\"text/css\">
     <meta charset=\"UTF-8\">
+
     <script type=\"text/javascript\" src=\"https://www.gstatic.com/charts/loader.js\"></script>
     <script type=\"text/javascript\">
       google.charts.load('current', {'packages':['corechart']});
@@ -82,6 +83,7 @@ echo "<html>
         chart.draw(data, options);
       }
     </script>
+    
   </head>
   <body>
     <h1>Rapport de test après mutations</h1>
@@ -131,12 +133,108 @@ done
 
 
 
-
-#-------------------------------          DETAIL PAR TEST
-# Génération du détail des tests par mutation
-echo "<h2>Détail par test</h2>" >> index.html
-
-
-
 echo "</body>
 </html>" >> index.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#-------------------------------          DETAIL PAR TEST
+
+
+
+# On va créer :
+# - un fichier contenant les noms des tests (tempTest.txt)
+# - un fichier contenant les noms des tests qui ont failed (testsFail.txt)
+# - un fichier contenant les noms des tests qui ont réussi (testsSucces.txt)
+# - une page HTML (histogrammeTest.html) qui contiendra l'histogramme résultat 
+
+# Nettoyage
+rm -f tempTest.txt testsSucces.txt testsFail.txt histogrammeTest.html
+# Compteur pour créer tempTest.txt : au premier rapport de test observé, on écrit dessus les noms des tests
+compteur=1
+# Par rapport de test
+find $REPO_RAPPORTS -type f | while read rapport
+do 
+    # Récupération des noms des compteurs dans tempTest.txt
+    if [ $compteur -eq 1 ] 
+    then 
+        echo $(xmllint --xpath "/testsuite/testcase/@name" $rapport 2>/dev/null ) >> tempTest.txt
+        compteur=`expr $compteur + 1`
+    fi
+    # Si le test est passé, on le met dans testsSucces.txt
+    echo "cat /testsuite/testcase[not(failure)]/@name" | xmllint --shell $rapport | while read line; 
+    do  
+        echo $line >> testsSucces.txt
+    done 
+    # S'il a échoué, on le place dans testsSucces
+    echo "cat /testsuite/testcase[failure]/@name" | xmllint --shell $rapport | while read line; 
+    do  
+        echo $line >> testsFail.txt
+    done 
+done
+
+
+# Génération du détail des tests par mutation
+echo "
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Détail par test</title>
+    <LINK href=\"style.css\" rel=\"stylesheet\" type=\"text/css\">
+    <meta charset=\"UTF-8\">
+  </head>
+<h2>Détail par test</h2>
+  <body class=\"devsite-layout-docs devsite-framebox\">
+<p style=\"display: none; height: 0; width: 0\">This is a snippet from developers.google.com</p>
+  <script type=\"text/javascript\" src=\"https://www.gstatic.com/charts/loader.js\"></script>
+  <script type=\"text/javascript\">
+    google.charts.load(\"current\", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Nom du test', 'Echecs']," >> histogrammeTest.html
+
+for i in $(cat tempTest.txt)
+do
+    echo "['$i', " >> histogrammeTest.html
+    grep -o $i testsFail.txt | wc -l >> histogrammeTest.html
+    echo "]," >> histogrammeTest.html
+done
+
+echo "      ]);
+      var options = {
+        title: \"Nombre d'échecs par test\",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: '95%'},
+        legend: { position: 'none' },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById('columnchart_plain'));
+      chart.draw(data, options);
+  }
+  </script>
+<div id=\"columnchart_plain\" style=\"width: 900px; height: 300px;\"></div>
+</body>
+</html>
+"  >> histogrammeTest.html
+
+rm -f tempTest.txt testsSucces.txt testsFail.txt
+
+
+

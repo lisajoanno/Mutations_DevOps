@@ -11,4 +11,6 @@ cd ..
 rm -Rf rapports # -f : sans confirmation
 rm -Rf programme_original
 
+rm index.html histogrammeTest.html
+
 echo 'Cleaned.'
