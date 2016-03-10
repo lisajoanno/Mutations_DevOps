@@ -20,7 +20,7 @@ Ci-dessous, la chaîne de build obtenue à l'issue du projet :
 <li>Les scripts shell sont indépendants du code source.</li>
 <li>Les deux étapes du framework sont séparées en deux étapes bien distinctes : la partie "génération des processeurs et des rapports des tests" et la partie "analyse et génération du rapport".</li>
 <li>On peut donc librement travailler sur une partie ou l'autre : si on écrit de nouveaux processeurs ou sélecteurs, le reste de la chaîne de build suit et le rapport se complète.</li>
-<li>Le rapport des tests est plutôt complet : un taux de succes, le détail par mutation ainsi qu'un histogramme qui présente le nombre de fois où chaque test a échoué.</li>
+<li>Le rapport des tests est plutôt complet : un taux de succès, le détail par mutation ainsi qu'un histogramme qui présente le nombre de fois où chaque test a échoué.</li>
 </ul>
 
 ###Faiblesses
