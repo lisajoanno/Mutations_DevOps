@@ -19,3 +19,6 @@ Applique les processeurs au code et génère les rapports de test.
     $ ./report.sh
 
 Construit le rapport dans index.html et histogrammeTest.html.
+
+Il est conseillé de lancer le framework sous ubuntu où xmllint est déjà installé.
+Dans process.sh, on mettre la valeur de OPT_MVN à '-q' pour rendre silencieux Maven.

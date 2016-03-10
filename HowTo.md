@@ -3,7 +3,7 @@
 ##Structure du projet##
 La description de l'architecture du framework est décrite dans le fichier <i><b>Report.md</b></i>.
 
-<p>
+<pre>
 /
 ├── img (images)
 ├── poms
@@ -19,7 +19,7 @@ La description de l'architecture du framework est décrite dans le fichier <i><b
 ├── clean.sh
 ├── process.sh
 └── report.sh
-</p>
+</pre>
 
 ##Exécution du framework##
 
