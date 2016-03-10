@@ -7,15 +7,15 @@ La description de l'architecture du framework est décrite dans le fichier <i><b
 /
 ├── img (images)
 ├── poms
-│   ├── pom.basique.xml
-│   └── pom_processor.xml
-├── processor
+│   ├── pom.basique.xml (pom sans processeur)
+│   └── pom_processor.xml (pom avec proccesseur)
+├── processor (projet des processeurs)
 │   ├── src
 │   └── pom.xml
-├── testsMutations
+├── testsMutations (projet contenant le code source original et les tests)
 │   ├── src
 │   └── pom.xml
-├── build_all.sh
+├── build_all.sh (lance clean.sh, process.sh et report.sh)
 ├── clean.sh
 ├── process.sh
 └── report.sh
@@ -58,7 +58,7 @@ On trouve dans histogrammeTest.html un histogramme qui indique combien de fois l
 
 ##Utiliser notre framework##
 
-On peut vouloir utiliser ce framwork pour plusieurs raisons :
+On peut vouloir utiliser ce framework pour plusieurs raisons :
 <ul>
 <li>Ajouter un processeur : il suffit d'ajouter la classe du processeur dans <i>processor/src/main/java/devops4/processor</i>.</li>
 <li>Ajouter (modifier) le programme testé : il faut placer son programme dans <i>testsMutations/src/main/java</i>.</li>
