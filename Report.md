@@ -12,8 +12,8 @@ Le framework se lance à l'aide de scripts shell, qui permettent d'automatiser l
 
 ###Forces
 <ul>
-<li>Notre framework est modulaire : en effet, nous pouvons utiliser ce framework sur les plateformes Windows et Ubuntu.</li>
-<li>Les processeurs sont parfaitement indépendants du code source, tout comme nos scripts shell.</li>
+<li>Notre framework est modulaire : en effet, nous pouvons utiliser ce framework sur les plateformes Windows et Ubuntu, ainsi que n'importe quel code source en entrée (les processeurs sont indépendants du code source).</li>
+<li>Les scripts shell sont parfaitement indépendants du code source.</li>
 </ul>
 
 ###Faiblesses
