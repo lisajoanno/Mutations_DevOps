@@ -1,16 +1,12 @@
 #! /bin/sh
 
-# Supprime un peu tout
-# A remplir surement
-
 cd processor
 mvn -q clean
 cd ../testsMutations
 mvn -q clean 
 cd ..
-rm -Rf rapports # -f : sans confirmation
+rm -Rf rapports
 rm -Rf programme_original
-
-rm index.html histogrammeTest.html
+rm -f index.html histogrammeTest.html
 
 echo 'Cleaned.'

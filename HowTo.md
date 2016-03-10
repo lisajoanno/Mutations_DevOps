@@ -3,6 +3,22 @@
 ##Structure du projet##
 La description de l'architecture du framework est décrite dans le fichier <i><b>Report.md</b></i>.
 
+/
+├── img (images)
+├── poms
+│   ├── pom.basique.xml
+│   └── pom_processor.xml
+├── processor
+│   ├── src
+│   └── pom.xml
+├── testsMutations
+│   ├── src
+│   └── pom.xml
+├── build_all.sh
+├── clean.sh
+├── process.sh
+└── report.sh
+
 ##Exécution du framework##
 
 Pour rappel, le projet se lance avec la commande :
@@ -34,4 +50,17 @@ Cette commande va exécuter une série d'actions, listée ci-dessous :
     $ ./report.sh
 Cette commande génère une page <i>index.html</i> qui est un bilan graphique des résultats des tests par mutations.
 On génère un camembert afin de voir combien de mutants ont été tués, combien sont encore en vie et combien ont généré des erreurs de compilation.
-On peut également consulter le nom des processeurs concernés par ces résultats.
+On peut également consulter le nom des processeurs concernés par ces résultats et le détail, par mutation, des tests qui sont passés ou non..
+On trouve dans histogrammeTest.html un histogramme qui indique combien de fois les tests ne sont pas passés, pour se donner une idée des tests les plus pertinents.
+
+
+##Utiliser notre framework##
+
+On peut vouloir utiliser ce framwork pour plusieurs raisons :
+<ul>
+<li>Ajouter un processeur : il suffit d'ajouter la classe du processeur dans <i>processor/src/main/java/devops4/processor</i>.</li>
+<li>Ajouter (modifier) le programme testé : il faut placer son programme dans <i>testsMutations/src/main/java</i>.</li>
+<li>Ajouter des tests : il faut ajouter les tests (ou les classes de test) dans <i>testsMutations/src/test/java/devops4/testsMutations</i>.</li>
+<li>Modifier le compte rendu des tests : il faut pour cela modifier <i>report.sh</i>.
+</ul>
+
