@@ -9,6 +9,8 @@ Ce choix ne fut pas très judicieux de notre part : le manque de maîtrise ainsi
 ##Architecture du framework
 Notre framework se constitue de deux projets Maven : un projet <b>processor</b> contenant les processeurs Spoon, ainsi qu'un projet <b>testsMutations</b> contenant le code source sur lequel on appliquera les mutations et effectuerons les tests.
 Le framework se lance à l'aide de scripts shell, qui permettent d'automatiser l'enchaînement des commandes à réaliser pour construire le rapport final (au format html).
+Ci-dessous, la chaîne de build obtenue à l'issu du projet :
+<img src="img/chaine_finale.png" alt="Chaîne de build finale"/>
 
 ##Forces & faiblesses
 
